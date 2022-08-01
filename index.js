@@ -9,11 +9,11 @@ const { API_PORT } = process.env
 const bcrypt = require('bcryptjs')
 
 // Models
-const User = require('./Models/User')
+const User = require('./models/User')
 const jwt = require('jsonwebtoken')
-const session_middleware = require('./Middleware/AdminMiddleware')
-const Vehiculo = require("./Models/Vehiculo")
-const tc = require('./Utils/DollarService') // tipo de cambio
+const session_middleware = require('./middleware/AdminMiddleware')
+const Vehiculo = require("./models/Vehiculo")
+const tc = require('./utils/DollarService') // tipo de cambio
 
 // live server
 app.use(express.json())
@@ -232,7 +232,6 @@ server.listen(API_PORT, () => {
             }
             vehiculos = _vehiculos
         }
-        console.log(vehiculos)
         return response.status(200).json({
             vehiculos
         })
